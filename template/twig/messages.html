@@ -1,0 +1,21 @@
+<form class="form-inline" method="POST">
+    <div class="form-group">
+        <input type="text" name="sendtext" class="form-control" placeholder="Enter message">
+    </div>
+    <button type="submit" class="btn btn-default">Send message</button>
+
+    <table class="table table-striped">
+        <thead>
+            <th>Text</th>
+            <th>Created At</th>
+        </thead>
+        <tbody>
+            {% for msg in messages %}
+                <tr>
+                    <td>{{ msg.text }}</td>
+                    <td>{{ msg.date | date('Y/m/d H:m:s') }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</form>

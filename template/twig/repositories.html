@@ -1,0 +1,20 @@
+<table class="table table-striped">
+    <thead>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Star</th>
+    </thead>
+    <tbody>
+      {% for repo in repositories %}
+        <tr>
+          <td>
+            <a href="{{ repo.html_url }}">
+              {{ repo.name }}
+            </a>
+          </td>
+          <td>{{ repo.description }}</td>
+          <td>{{ repo.stargazers_count }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
